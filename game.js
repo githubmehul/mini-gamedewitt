@@ -1,9 +1,9 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
-const scoreText = document.querySelector('#score');
+const scoreText = document.querySelector('#score');2
 const progressBarFull = document.querySelector('#progressBarFull');
-
+const image = document.querySelector('.image');
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
@@ -12,7 +12,8 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: 'What is 2 + 2?',
+        question: 'Where did Willem Adriaan de Wit come from before landing in Malacca?',
+        image:  "D:\Mehul\Mini-Game\Images\Question1.png",
         choice1: '2',
         choice2: '4',
         choice3: '21',
@@ -22,6 +23,7 @@ let questions = [
     {
         question:
             "The tallest building in the world is located in which city?",
+        image:  "D:\Mehul\Mini-Game\Images\Question1.png",
         choice1: "Dubai",
         choice2: "New York",
         choice3: "Shanghai",
@@ -30,6 +32,7 @@ let questions = [
     },
     {
         question: "What percent of American adults believe that chocolate milk comes from brown cows?",
+        image:  "D:\Mehul\Mini-Game\Images\Question1.png",
         choice1: "20%",
         choice2: "18%",
         choice3: "7%",
@@ -38,6 +41,7 @@ let questions = [
     },
     {
         question: "Approximately what percent of U.S. power outages are caused by squirrels?",
+        image: "D:\Mehul\Mini-Game\Images\Question1.png",
         choice1: "10-20%",
         choice2: "5-10%",
         choice3: "15-20%",
@@ -59,14 +63,13 @@ startGame = () => {
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
-
         return window.location.assign('/end.html')
     }
 
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
-    
+
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
