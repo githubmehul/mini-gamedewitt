@@ -36,10 +36,6 @@ h2 {
     margin: 0 auto;
     padding: 2rem;
 }
-.container.image-container{
-  width: 100vw;
-  height: 100vh;
-}
 
 .flex-column {
     display: flex;
