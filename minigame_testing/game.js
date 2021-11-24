@@ -100,6 +100,8 @@ choices.forEach(choice => {
 
 function img() {
     var image1, image2, image3
+    image.height = 100
+    image.weight = 200
 
     if (currentQuestion.answer == 2) {
         image = image.src = "image1.png"   
